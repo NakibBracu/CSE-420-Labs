@@ -1,0 +1,30 @@
+import java.io.*;
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+public class Nakib_18301203_03 {
+    public static void main(String[] args) throws FileNotFoundException {
+        Scanner sc = new Scanner(new File("input.txt"));
+             int number_of_Patterns = sc.nextInt();
+             sc.nextLine();
+             String re_Patterns[]=new String[number_of_Patterns];
+             for(int i=0;i<number_of_Patterns;i++){
+             re_Patterns[i] = sc.nextLine();   
+    }    
+            int inputs = sc.nextInt();
+            sc.nextLine(); 
+         for(int i=0;i<inputs;i++){
+             boolean milse_Ki = false;
+             String kontai_Milse = "";
+              String str = sc.nextLine();
+              for(int j=0;j<number_of_Patterns;j++){
+              if(Pattern.matches(re_Patterns[j],str)){
+               milse_Ki=true;
+               kontai_Milse=kontai_Milse+(j+1)+" ";
+              }
+              } 
+    String msg =  (milse_Ki) ? "Yes, "+kontai_Milse : "No, "+0;
+    System.out.println(msg);
+         }      
+    }
+}
